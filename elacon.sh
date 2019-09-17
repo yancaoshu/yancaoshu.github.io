@@ -21,6 +21,11 @@ a=`head -n 1 NUM/sor.txt | awk '{print $1}'`
 b=`grep "$a" NUM/e.txt | awk '{print $1}' `
 #rm ELACON
 cp ELACON_strainmode$b ELACON
+for T in 700
+do
+echo -e "5\n$T" >c.txt
+cij2kl <c.txt
+done
 cat NUM/sor.txt >>../../alle.txt
 cd ../../
 done
